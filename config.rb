@@ -17,6 +17,11 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true
+
+# Add syntax highlighting and line numbers
+activate :syntax, :line_numbers => true
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -36,8 +41,9 @@ end
 
 # Build-specific configuration
 configure :build do
+
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript

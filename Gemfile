@@ -10,4 +10,8 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
 gem 'middleman', '~> 4.2'
+gem 'middleman-syntax', '~> 3.0.0'
 gem 'middleman-livereload', '~> 3.4'
+
+# Markdown parsing
+gem 'redcarpet', '~> 3.4.0'
