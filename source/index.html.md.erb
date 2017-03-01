@@ -2,11 +2,46 @@
 title: 👑 Reader Prototype 👑
 ---
 
+<section class="workspace">
 <% data.data.workspaces.each do |workspace| %>
-<h1><%= workspace.name %></h1>
 
-  <% workspace.components.each do |comp| %>
-  <h2><%= comp.name %></h2>
-  <%= comp.description %>
-  <% end %>
+<header>
+<h1 class="title"><%= workspace.name %></h1>
+</header>
+
+<div class="sidebar">
+<ul>
+<% workspace.components.each do |comp| %>
+
+<li>
+<% if comp.parent.present? %>
+  <%= comp.name %>
+<% else %>
+  <em><%= comp.name %></em>
 <% end %>
+</li>
+
+<% end %>
+</ul>
+</div>
+
+<div class="main">
+
+<% workspace.components.each do |comp| %>
+
+<% if comp.parent.present? %>
+<h3><%= comp.name %></h3>
+<% else %>
+<h2><%= comp.name %></h2>
+<% end %>
+
+<% if comp.description.present? %>
+<%= comp.description %>
+<% end %>
+
+<% end %>
+
+</div>
+
+<% end %>
+</section>

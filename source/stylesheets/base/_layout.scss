@@ -12,3 +12,13 @@ html,
 body {
   height: 100%;
 }
+
+section.workspace {
+  @include grid-column(12);
+}
+.main {
+  @include grid-column(8);
+}
+.sidebar {
+  @include grid-column(4);
+}
