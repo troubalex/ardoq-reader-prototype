@@ -15,9 +15,9 @@ title: 👑 Reader Prototype 👑
 
 <li>
 <% if comp.parent.present? %>
-  <%= comp.name %>
+<%= link_to comp.name %>
 <% else %>
-  <em><%= comp.name %></em>
+<em class="uppercase"><%= link_to comp.name %></em>
 <% end %>
 </li>
 
@@ -29,6 +29,7 @@ title: 👑 Reader Prototype 👑
 
 <% workspace.components.each do |comp| %>
 
+<section>
 <% if comp.parent.present? %>
 <h3><%= comp.name %></h3>
 <% else %>
@@ -36,8 +37,9 @@ title: 👑 Reader Prototype 👑
 <% end %>
 
 <% if comp.description.present? %>
-<%= comp.description %>
+<%= markdown.render comp.description %>
 <% end %>
+</section>
 
 <% end %>
 

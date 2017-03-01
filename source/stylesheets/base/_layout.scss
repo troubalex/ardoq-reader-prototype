@@ -18,7 +18,15 @@ section.workspace {
 }
 .main {
   @include grid-column(8);
+  section {
+    margin-top: $base-spacing;
+  }
 }
 .sidebar {
   @include grid-column(4);
+}
+
+pre {
+  background-color: $light-gray;
+  padding: $small-spacing;
 }

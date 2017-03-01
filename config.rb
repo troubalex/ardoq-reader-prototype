@@ -17,8 +17,6 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
-set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true
 
 # Add syntax highlighting and line numbers
 activate :syntax, :line_numbers => true
@@ -33,11 +31,11 @@ end
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def markdown
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true, quote: true)
+  end
+end
 
 # Build-specific configuration
 configure :build do
