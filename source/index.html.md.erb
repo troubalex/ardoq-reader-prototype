@@ -15,9 +15,9 @@ title: 👑 Reader Prototype 👑
 
 <li>
 <% if comp.parent.present? %>
-<%= link_to comp.name %>
+<%= link_to comp.name, '#' + comp.name %>
 <% else %>
-<em class="uppercase"><%= link_to comp.name %></em>
+<em class="uppercase"><%= link_to comp.name, '#' + comp.name %></em>
 <% end %>
 </li>
 
@@ -31,9 +31,9 @@ title: 👑 Reader Prototype 👑
 
 <section>
 <% if comp.parent.present? %>
-<h3><%= comp.name %></h3>
+<a name="<%= comp.name %>"></a><h3><%= comp.name %></h3>
 <% else %>
-<h2><%= comp.name %></h2>
+<a name="<%= comp.name %>"></a><h2><%= comp.name %></h2>
 <% end %>
 
 <% if comp.description.present? %>
